@@ -1,0 +1,82 @@
+/* style.css */
+a,
+a:link,
+a:visited,
+a:active {
+    /* color: inherit; */
+}
+.alert-container {
+    width: 100%;
+    padding: 1rem 1rem 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+nav {
+    background: #17a2b8;
+}
+
+/* ADMIN PAGE */
+.page-admin .wrapper {
+    padding: 30px;
+    color: #fff;
+    border-radius: 10px;
+    background: url('../../images/login-bg.png') no-repeat;
+    background-size: cover;
+}
+.page-admin .row {
+    margin: 50px auto;
+}
+.page-admin h2 {
+    margin-bottom: 30px;
+}
+.page-admin button.standard {
+    background: #fff;
+    border-color: #495057;
+}
+
+.page-admin button.standard:hover {
+    color: #fff;
+    background: #17a2b8;
+    border-color: #495057;
+}
+
+/* EMPLOYEE TRAINING */
+.page-emp-training .wrapper {
+    padding: 30px;
+    color: #fff;
+    border-radius: 20px;
+    background: url('../../images/login-bg.png') no-repeat #fff;
+    background-size: cover;
+}
+.page-emp-training  .row {
+    margin: 50px auto;
+}
+.page-emp-training li {
+    font-size: 20px;
+    text-align: left;
+}
+.page-emp-training .complete-button {
+    display: none;
+    background: #fff;
+}
+.page-emp-training .complete-button:hover {
+    color: #fff;
+    background: #17a2b8;
+    border-color: #fff;
+}
+
+/* EMPLOYEE ACCOUNTS */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

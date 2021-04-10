@@ -1,0 +1,593 @@
+/* style.css */
+a,
+a:link,
+a:visited,
+a:active {
+    color: inherit;
+}
+.alert-container {
+    width: 100%;
+    padding: 1rem 1rem 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+nav {
+    background: #17a2b8;
+}
+.navbar {
+    background-image: linear-gradient(to bottom right, #00cfe6, #4e5fff);
+}
+.blank-field {
+    border: 1px solid red;
+}
+
+/* LOGIN PAGE */
+.page-login .wrapper {
+    padding: 30px;
+    color: #fff;
+    border-radius: 10px;
+    background: url('../images/login-bg.png') no-repeat;
+    background-size: cover;
+}
+.page-login .row {
+    margin: 50px auto;
+}
+.page-login h2 {
+    margin-bottom: 30px;
+}
+.loginForm input {
+    text-align: center;
+    border-color: #495057;
+}
+.loginForm button {
+    background: #fff;
+    border-color: #495057;
+}
+.login-options {
+    padding-top: 20px;
+}
+.login-options a {
+    color: #fff;
+}
+.page-login .alert-danger {
+    margin-top: 50px;
+}
+
+/* SIGNUP PAGE */
+.page-signup .wrapper {
+    padding: 30px;
+    color: #fff;
+    border-radius: 10px;
+    background: url('../images/login-bg.png') no-repeat;
+    background-size: cover;
+}
+.page-signup .row {
+    margin: 50px auto;
+}
+.page-signup h2 {
+    margin-bottom: 30px;
+}
+.signupForm input {
+    text-align: center;
+    border-color: #495057;
+}
+.signupForm button {
+    background: #fff;
+    border-color: #495057;
+}
+.page-signup .alert-danger {
+    margin-top: 50px;
+}
+.signup-options {
+    padding-top: 20px;
+}
+.signup-options a {
+    color: #fff;
+}
+
+/* AGENCY PAGE */
+.page-agency .wrapper {
+    padding: 30px;
+    color: #fff;
+    background: url('../images/login-bg2.png') no-repeat;
+    background-size: cover;
+}
+.page-agency h2 {
+    padding: 50px 0 20px;
+}
+.page-agency h3 {
+    margin-bottom: 0;
+}
+.page-agency h3:hover {
+    color: #28a745;
+}
+.page-agency .add-employee {
+    margin: 10px 0 30px;
+}
+.page-agency .btn {
+    margin-bottom: 10px;
+}
+.page-agency .input-group {
+    margin-bottom: 30px;
+    padding: 0;
+}
+.page-agency .input-group-addon {
+    padding: 6px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #fff;
+    border-radius: 5px 0 0 5px;
+}
+.page-agency .employee-input {
+    color: #fff;
+    background: transparent;
+    border-color: #fff;
+}
+.page-agency input:focus {
+    background: #6666ff;
+}
+.page-agency .modal-dialog .btn-primary {
+    background-color: #6666ff;
+    border-color: #6666ff;
+}
+.page-agency .add-button {
+    margin-top: 20px;
+}
+.ui-autocomplete {
+    max-height: 200px;
+    overflow: scroll;
+}
+
+/* CATEGORY PAGE */
+.page-category .wrapper {
+    padding: 30px;
+    color: #fff;
+    background: url('../images/login-bg2.png') no-repeat;
+    background-size: cover;
+}
+.page-category h2 {
+    padding: 50px 0 20px;
+}
+.page-category .category-list {
+    padding-top: 3rem;
+}
+.page-category .category-section {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.page-category .category-section p {
+    margin: 0;
+}
+.page-category .modal {
+    color: #000;
+}
+.page-category .non-time:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* EMPLOYEES PAGE */
+.navbar-brand img {
+    width: 100px;
+}
+.page-employees .letter-pagination {
+    padding-bottom: 20px;
+}
+.page-employees .letter-pagination a {
+    padding: 5px 10px;
+    font-size: 20px;
+}
+a.current-letter {
+    color: #fff;
+    background: #4e5fff;
+    border-radius: 20px;
+}
+
+/* EMPLOYEES PAGE  / POSITION PAGE */
+.employees-page-container .emp-card.inactive {
+    display: none;
+}
+.employees-page-container .card .employee-collapse-toggle {
+    position: absolute;
+    right: 0;
+    bottom: 24px;
+    width: 28px;
+    height: 28px;
+    padding: 3px 0 0;
+    border: 0;
+    border-radius: 48px;
+    transition: all .2s ease-in-out;
+}
+.employees-page-container .card .employee-collapse-toggle  .svg-inline--fa {
+    width: 16px;
+    height: 16px;
+}
+.page-employees .btn-outline-primary,
+.page-position .btn-outline-primary {
+    color: #4e5fff;
+    border-color: #4e5fff;
+}
+.page-employees .btn-outline-primary:hover,
+.page-position .btn-outline-primary:hover {
+    color: #fff;
+    background: #4e5fff;
+    border: none;
+}
+.round {
+    position: relative;
+    padding-left: 15px;
+  }
+.round label {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    height: 28px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 28px;
+}
+.round label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 7px;
+    opacity: 0;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+.round input[type="checkbox"] {
+    visibility: hidden;
+}
+.round input[type="checkbox"]:checked + label {
+    background-color: #4e5fff;
+    border-color: #4e5fff;
+  }
+.round input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+  }
+.checkbox-label {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+.employees-page-container .initials-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+    padding: 0;
+}
+.employees-page-container .btn-secondary {
+    color: #fff;
+    background-color: #4e5fff;
+    border-color: #4e5fff;
+}
+.btn-outline-secondary {
+    color: #4e5fff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #4e5fff
+}
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #4e5fff;
+    border-color: #4e5fff
+}
+.btn-outline-secondary.focus,
+.btn-outline-secondary:focus {
+    box-shadow: 0 0 0 .2rem #4e5fff
+}
+.btn-outline-secondary.disabled,
+.btn-outline-secondary:disabled {
+    color: #4e5fff;
+    background-color: transparent
+}
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-outline-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #4e5fff;
+    border-color: #4e5fff
+}
+.btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
+.btn-outline-secondary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-outline-secondary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem #4e5fff;
+}
+
+/* POSITION PAGE */
+.page-position .btn-primary {
+    color: #000;
+    background: #fff;
+    border: 1px solid #ced4da;
+}
+.page-position .btn-primary:hover {
+    color: #fff;
+    background: #4e5fff;
+    border: none;
+}
+
+/* EDIT EMPLOYEE PAGE */
+.page-edit .modal.show {
+    position: relative;
+    display: block;
+    overflow: scroll;
+}
+.page-edit .btn-danger {
+    margin-left: 20px;
+}
+
+/* COST CONTROL PAGE */
+.page-cost-report .wrapper {
+    padding: 30px;
+    color: #fff;
+    background: url('../images/login-bg2.png') no-repeat;
+    background-size: cover;
+}
+.page-cost-report h2 {
+    padding: 50px 0 20px;
+}
+.page-cost-report .category-list {
+    padding-top: 3rem;
+}
+.page-cost-report .category-section {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.page-cost-report .category-section p {
+    margin: 0;
+}
+
+/* AGENCY DATA PAGE */
+.page-data .header {
+    margin-bottom: 10px;
+}
+.page-data h6 {
+    margin: 0;
+    padding: 10px;
+}
+.page-data .btn-outline-primary {
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+.page-data .btn-outline-primary:hover {
+    color: #fff;
+    background: #17a2b8;
+    border: none;
+}
+
+/* EDIT DATA PAGE */
+.page-data-edit .modal-dialog {
+    max-width: 90%;
+}
+.page-data-edit h5 {
+    margin: 1rem 0 1.5rem;
+}
+
+/* IN-TRAINING EMPLOYEES PAGE */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/* TIME STUDY PAGE */
+.page-timestudy .add-log {
+    color: #4e5fff;
+    border-color: #4e5fff;
+}
+.page-timestudy .add-log:hover {
+    color: #fff;
+    background: #4e5fff;
+    border: none;
+    text-decoration: none;
+}
+.page-timestudy .add-log:focus {
+    color: #4e5fff;
+    border-color: #4e5fff;
+    text-decoration: none;
+}
+.page-timestudy .add-log svg {
+    width: .875em;
+    overflow: visible;
+    display: inline-block;
+    font-size: inherit;
+    vertical-align: -0.125em;
+}
+.page-timestudy .save-btn {
+    background: #4e5fff;
+}
+.page-timestudy .save-btn svg {
+    width: 30px;
+}
+.page-timestudy .study-instructions {
+    margin: 20px auto;
+    background: #e9ecef;
+}
+.page-timestudy hr {
+    background: #000;
+}
+.page-timestudy button.pto-btn {
+    background: #fff;
+    border: 1px solid #4e5fff;
+    color: #4e5fff;
+}
+.page-timestudy button.pto-btn:hover {
+    color: #fff;
+    background: #4e5fff;
+    text-decoration: none;
+}
+.page-timestudy .fa-chevron-left,
+.page-timestudy .fa-chevron-right {
+    font-size: 60px;
+    color: #4e5fff;
+}
+.page-timestudy .fas.disabled {
+    color: #e9ecef;
+}
+.page-timestudy .fa-trash-alt,
+.page-timestudy .fa-copy {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    font-size: 25px;
+    color: #4e5fff;
+    cursor: pointer;
+}
+.page-timestudy #timelog-0 .delete-btn,
+.page-timestudy #timelog-0 .copy-btn {
+    display: none !important;
+}
+.page-timestudy .alert-danger {
+    display: none;
+}
+.page-timestudy .progress {
+    counter-reset: progress-counter;
+    display: flex;
+    font-size: .75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: auto;
+    background-color: inherit;
+}
+.page-timestudy .progress__item {
+    counter-increment: progress-counter;
+    display: block;
+    flex: 1 1 0;
+    position: relative;
+}
+.page-timestudy .progress__item:before {
+    border: 2px solid #ced4da;
+    border-radius: 50%;
+    content: counter(progress-counter);
+    display: block;
+    font-size: 1.25rem;
+    height: 2.5rem;
+    line-height: calc(2.5rem - 4px);
+    margin-left: calc(50% - 1.25rem);
+    margin-bottom: .5rem;
+    width: 2.5rem;
+}
+.page-timestudy .progress__item:after {
+    content: "";
+    background-color: #ced4da;
+    height: 2px;
+    left: calc(50% + 1.25rem);
+    position: absolute;
+    top: 1.25rem;
+    width: calc(100% - 2.5rem);
+}
+.page-timestudy .progress__item:last-child:after {
+    width: 0;
+}
+.page-timestudy .progress__item--current:before {
+    border-color: #28a745;
+    background: #28a745;
+    color: #fff;
+}
+
+/* TRAINING PAGE */
+.page-training .wrapper {
+    padding: 30px;
+    color: #fff;
+    background: url('../images/login-bg2.png') no-repeat;
+    background-size: cover;
+}
+.page-training h2 {
+    padding: 50px 0 20px;
+}
+.page-training h3 {
+    margin-bottom: 0;
+}
+.page-training .add-employee {
+    margin: 10px 0 30px;
+}
+.page-training .btn {
+    margin-bottom: 10px;
+}
+
+/* TRAINING PDF PAGE */
+.page-training-pdf iframe {
+    width: 100%;
+    height: 800px;
+}
+.page-training-pdf .fa-chevron-left,
+.page-training-pdf .fa-chevron-right {
+    font-size: 60px;
+    color: #4e5fff;
+}
+.page-training-pdf .fas.disabled {
+    color: #e9ecef;
+}
+
+/* AGENCY PAGE */
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 800px;
+    }
+}
+
+/* TRAINING PDF PAGE */
+@media (max-width: 768px) {
+    .page-training-pdf iframe {
+        height: 600px;
+    }
+}
+@media (max-width: 576px) {
+    .page-training-pdf iframe {
+        height: 400px;
+    }
+}
+
+.container.pdf-training {
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    background: url("../docs/html/background.jpg");
+}
+.container.pdf-training h1 {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    text-align: left;
+}
+.container.pdf-training ul,
+.container.pdf-training ol {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    font-size: 30px;
+    text-align: left;
+}
+.container.pdf-training .pink {
+    color: #ff1493;
+}
+.container.pdf-training .red {
+    color: #cc0000;
+}
+.container.pdf-training .green {
+    color: green;
+}
+.container.pdf-training .radio-response {
+    display: none
+}

@@ -1,0 +1,9 @@
+{
+    "require": {
+        "twbs/bootstrap": "^4.3",
+        "ext-mysqli": "*"
+    },
+    "require-dev": {
+      "heroku/heroku-buildpack-php": "*"
+    }
+}
