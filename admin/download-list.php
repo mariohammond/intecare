@@ -7,7 +7,9 @@
 
     $period = $_GET['period'];
 
-    $sql = "SELECT agencies.AgencyName, agency_employees.FirstName, agency_employees.LastName, agency_employees.Email, selected.mhfrpid FROM employee_selected AS selected INNER JOIN agency_employees ON agency_employees.MHFRPID = selected.mhfrpid INNER JOIN agencies ON agencies.AgencyId = agency_employees.InteCareAgencyID WHERE selected.time_period = ? ORDER BY agencies.AgencyName";
+    /*$sql = "SELECT agencies.AgencyName, agency_employees.FirstName, agency_employees.LastName, agency_employees.Email, selected.mhfrpid FROM employee_selected AS selected INNER JOIN agency_employees ON agency_employees.MHFRPID = selected.mhfrpid INNER JOIN agencies ON agencies.AgencyId = agency_employees.InteCareAgencyID WHERE selected.time_period = ? ORDER BY agencies.AgencyName";*/
+
+    $sql = "SELECT agency_name, first_name, last_name, email, mhfrpid FROM employee_selected WHERE time_period = ? ORDER BY agency_name";
     $stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);
     mysqli_stmt_bind_param($stmt, "s", $period);

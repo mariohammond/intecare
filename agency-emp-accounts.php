@@ -96,7 +96,9 @@
           *******************/
         ?>
         <?php
-            $sql1 = "SELECT agency_employees.MHFRPID, agency_employees.FirstName, agency_employees.LastName, positions.positionName, agencies.AgencyName, agencies.AgencyId, agency_employees.LocationCode, agency_employees.Email FROM agency_employees INNER JOIN employee_selected ON employee_selected.mhfrpid = agency_employees.MHFRPID INNER JOIN positions ON positions.positionId = agency_employees.PositionID INNER JOIN agencies ON agencies.AgencyId = agency_employees.InteCareAgencyID WHERE agency_id = '" . $agencyId . "' AND time_period = '" . $timePeriod . "' Order By agency_employees.LastName";
+            /*$sql1 = "SELECT agency_employees.MHFRPID, agency_employees.FirstName, agency_employees.LastName, positions.positionName, agencies.AgencyName, agencies.AgencyId, agency_employees.LocationCode, agency_employees.Email FROM agency_employees INNER JOIN employee_selected ON employee_selected.mhfrpid = agency_employees.MHFRPID INNER JOIN positions ON positions.positionId = agency_employees.PositionID INNER JOIN agencies ON agencies.AgencyId = agency_employees.InteCareAgencyID WHERE agency_id = '" . $agencyId . "' AND time_period = '" . $timePeriod . "' Order By agency_employees.LastName";*/
+
+            $sql1 = "SELECT mhfrpid, first_name, last_name, position_name, agency_name, agency_id, location_code, email FROM employee_selected WHERE agency_id = '" . $agencyId . "' AND time_period = '" . $timePeriod . "' ORDER BY last_name";
             //var_dump($sql1); exit;
             $stmt1 = $conn->prepare($sql1);
             //mysqli_stmt_bind_param($stmt1, "ss", $agencyId, $timePeriod);

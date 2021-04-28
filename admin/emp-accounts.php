@@ -10,6 +10,9 @@
     $emailType = $_GET['email'];
     $timePeriod = $_GET['period'];
 
+    // For search function
+    require "./employeeListAdmin.inc.php";
+
     // Get all agencies
     $sql0 = "SELECT AgencyName, AgencyId FROM agencies ORDER BY AgencyName";
     $stmt0 = $conn->prepare($sql0);
@@ -63,6 +66,9 @@
               <a class="btn btn-primary border" href="download-list.php?period=<?php echo $timePeriod; ?>" role="button">Download List</a>
               <a class="btn btn-primary border" href="training-progress.php?period=<?php echo $timePeriod; ?>" role="button">Training Progress</a>
             </div>
+            <div class="mb-3 col-sm-12 col-md-12 col-lg-4 mx-auto">
+                <input id="employeeSearch" type="text" placeholder="Search for Employee" value="" class="form-control">
+            </div>
             <?php if ($dateCheck > 0) : ?>
               <div class="row text-center justify-content-center mb-4">
                 <p class="col-12">Training email sent on <?php echo $dateSent; ?>.</p>
@@ -104,7 +110,9 @@
           *******************/
         ?>
         <?php foreach ($agencyList as $agency) {
-            $sql1 = "SELECT agency_employees.MHFRPID, agency_employees.FirstName, agency_employees.LastName, positions.positionName, agencies.AgencyName, agencies.AgencyId, agency_employees.LocationCode, agency_employees.Email FROM agency_employees INNER JOIN employee_selected ON employee_selected.mhfrpid = agency_employees.MHFRPID INNER JOIN positions ON positions.positionId = agency_employees.PositionID INNER JOIN agencies ON agencies.AgencyId = agency_employees.InteCareAgencyID WHERE agency_id = ? AND time_period = ? Order By agency_employees.LastName";
+            /*$sql1 = "SELECT agency_employees.MHFRPID, agency_employees.FirstName, agency_employees.LastName, positions.positionName, agencies.AgencyName, agencies.AgencyId, agency_employees.LocationCode, agency_employees.Email FROM agency_employees INNER JOIN employee_selected ON employee_selected.mhfrpid = agency_employees.MHFRPID INNER JOIN positions ON positions.positionId = agency_employees.PositionID INNER JOIN agencies ON agencies.AgencyId = agency_employees.InteCareAgencyID WHERE agency_id = ? AND time_period = ? Order By agency_employees.LastName";*/
+
+            $sql1 = "SELECT mhfrpid, first_name, last_name, position_name, agency_name, agency_id, location_code, email FROM employee_selected WHERE agency_id = ? AND time_period = ? ORDER BY last_name";
             //var_dump($sql1); exit;
             $stmt1 = $conn->prepare($sql1);
             mysqli_stmt_bind_param($stmt1, "ss", $agency[1], $timePeriod);
@@ -135,7 +143,7 @@
               $link = "<a href='http://intecareapp.com/training?id=".$emp[0]."' target='_blank'>".$emp[0]."</a>";
               echo "
               <tr>
-                  <td>$link</td>
+                  <td id='$emp[0]'>$link</td>
                   <td>$emp[1] $emp[2]</td>
                   <td>$emp[3]</td>
                   <td>$emp[4]</td>

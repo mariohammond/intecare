@@ -1,6 +1,6 @@
 <?php
     // Auto-generated search list
-    require 'db.inc.php';
+    include 'db.inc.php';
     $agencyId = $_COOKIE['agencyId'];
     $vacant = '%vacant%';
 

@@ -42,7 +42,8 @@
 
     // Create training account for participant
     foreach ($participantIds as $participantId) {
-        $sql4 = "SELECT FirstName, LastName, Email, InteCareAgencyID, MHFRPID FROM agency_employees WHERE MHFRPID = ?";
+        //$sql4 = "SELECT a.FirstName, a.LastName, a.Email, a.InteCareAgencyID, a.MHFRPID, b.AgencyName FROM agency_employees a INNER JOIN agencies b ON a.InteCareAgencyID = b.AgencyId WHERE MHFRPID = ?";
+        $sql4 = "SELECT a.FirstName, a.LastName, a.Email, a.InteCareAgencyID, a.MHFRPID, b.AgencyName, c.positionName FROM agency_employees a INNER JOIN agencies b ON a.InteCareAgencyID = b.AgencyId INNER JOIN positions c ON c.positionId = a.PositionID WHERE MHFRPID = ?";
         $stmt4 = $conn->prepare($sql4);
         mysqli_stmt_bind_param($stmt4, "s", $participantId[0]);
         mysqli_stmt_execute($stmt4);
@@ -55,6 +56,8 @@
         $email = $empInfo[0][2];
         $agencyId = $empInfo[0][3];
         $mhfrpid = $empInfo[0][4];
+        $agencyName = $empInfo[0][5];
+        $positionName = $empInfo[0][6];
         $password = password_hash($mhfrpid, PASSWORD_DEFAULT);
         $role = 'employee';
 
@@ -66,9 +69,9 @@
         $stmt5->close();*/
 
         // Add employee account to selected table in database
-        $sql6 = "INSERT INTO employee_selected (mhfrpid, agency_id, time_period) VALUES (?, ?, ?)";
+        $sql6 = "INSERT INTO employee_selected (mhfrpid, agency_id, time_period, first_name, last_name, email, agency_name, position_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt6 = $conn->prepare($sql6);
-        $stmt6->bind_param("sis", $mhfrpid, $agencyId, $period);
+        $stmt6->bind_param("sissssss", $mhfrpid, $agencyId, $period, $firstname, $lastname, $email, $agencyName, $positionName);
         $stmt6->execute();
         $stmt6->close();
     }

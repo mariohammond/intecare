@@ -19,7 +19,9 @@
     $stmt0->close();
 
     // Get agency participants list
-    $sql1 = "SELECT agency_employees.FirstName, agency_employees.LastName, agency_employees.Email, agency_employees.MHFRPID FROM employee_selected INNER JOIN agency_employees WHERE employee_selected.mhfrpid = agency_employees.MHFRPID AND agency_id = ? AND time_period = ?";
+    /*$sql1 = "SELECT agency_employees.FirstName, agency_employees.LastName, agency_employees.Email, agency_employees.MHFRPID FROM employee_selected INNER JOIN agency_employees WHERE employee_selected.mhfrpid = agency_employees.MHFRPID AND agency_id = ? AND time_period = ?";*/
+
+    $sql1 = "SELECT first_name, last_name, email, mhfrpid FROM employee_selected WHERE agency_id = ? AND time_period = ?";
     $stmt1 = $conn->prepare($sql1);
     mysqli_stmt_bind_param($stmt1, "ss", $agencyId, $timePeriod);
     mysqli_stmt_execute($stmt1);
