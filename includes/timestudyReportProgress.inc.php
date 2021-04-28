@@ -18,7 +18,7 @@
     $stmtA->close();
 
     // Get employee timestudy progress
-    $sql = "SELECT options.value AS `Qtr End Date`, positions.positionName AS `Position`, agencies.AgencyName AS `Center`, employees.LastName AS `Last Name`, employees.FirstName AS `First Name`, selected.mhfrpid AS `ID` 
+    /*$sql = "SELECT options.value AS `Qtr End Date`, positions.positionName AS `Position`, agencies.AgencyName AS `Center`, employees.LastName AS `Last Name`, employees.FirstName AS `First Name`, selected.mhfrpid AS `ID` 
     FROM employee_selected AS selected 
     INNER JOIN agency_employees AS employees ON employees.MHFRPID = selected.mhfrpid 
     INNER JOIN positions AS positions ON positions.positionId = employees.PositionID 
@@ -26,7 +26,14 @@
     INNER JOIN options AS options 
     WHERE selected.time_period = ? 
     GROUP BY selected.mhfrpid
-    ORDER BY agencies.AgencyName, employees.LastName";
+    ORDER BY agencies.AgencyName, employees.LastName";*/
+
+    $sql="SELECT b.value AS `Qtr End Date`, a.position_name AS `Position`, a.agency_name AS `Center`, a.last_name AS `Last Name`, a.first_name AS `First Name`, a.mhfrpid AS `ID` 
+    FROM employee_selected AS a 
+    INNER JOIN options AS b 
+    WHERE a.time_period = ? 
+    GROUP BY a.mhfrpid
+    ORDER BY a.agency_name, a.last_name";
 
     $stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);

@@ -71,7 +71,10 @@
         </div>
         <?php foreach ($agencyList as $agency) {
             // Get info of selected employees
-            $sql1 = "SELECT agency_employees.MHFRPID, agency_employees.FirstName, agency_employees.LastName, agency_employees.Email FROM agency_employees INNER JOIN employee_selected ON employee_selected.mhfrpid = agency_employees.MHFRPID WHERE agency_employees.InteCareAgencyID = ? AND employee_selected.time_period = ?";
+            
+            /*$sql1 = "SELECT agency_employees.MHFRPID, agency_employees.FirstName, agency_employees.LastName, agency_employees.Email FROM agency_employees INNER JOIN employee_selected ON employee_selected.mhfrpid = agency_employees.MHFRPID WHERE agency_employees.InteCareAgencyID = ? AND employee_selected.time_period = ?";*/
+
+            $sql1 = "SELECT mhfrpid, first_name, last_name, email FROM employee_selected WHERE agency_id = ? AND time_period = ?";
             $stmt1 = $conn->prepare($sql1);
             mysqli_stmt_bind_param($stmt1, "ss", $agency[1], $timePeriod);
             mysqli_stmt_execute($stmt1);

@@ -66,7 +66,9 @@
         </div>
         <?php 
             // Get info of selected employees
-            $sql1 = "SELECT agency_employees.MHFRPID, agency_employees.FirstName, agency_employees.LastName, agency_employees.Email FROM agency_employees INNER JOIN employee_selected ON employee_selected.mhfrpid = agency_employees.MHFRPID WHERE agency_employees.InteCareAgencyID = '" . $agencyId . "' AND employee_selected.time_period = '" . $timePeriod . "' ORDER BY agency_employees.FirstName";
+            /*$sql1 = "SELECT agency_employees.MHFRPID, agency_employees.FirstName, agency_employees.LastName, agency_employees.Email FROM agency_employees INNER JOIN employee_selected ON employee_selected.mhfrpid = agency_employees.MHFRPID WHERE agency_employees.InteCareAgencyID = '" . $agencyId . "' AND employee_selected.time_period = '" . $timePeriod . "' ORDER BY agency_employees.FirstName";*/
+
+            $sql1 = "SELECT mhfrpid, first_name, last_name, email FROM employee_selected WHERE agency_id = '" . $agencyId . "' AND time_period = '" . $timePeriod . "' ORDER BY first_name";
             $stmt1 = $conn->prepare($sql1);
             //mysqli_stmt_bind_param($stmt1, "ss", $agency[1], $timePeriod);
             mysqli_stmt_execute($stmt1);
